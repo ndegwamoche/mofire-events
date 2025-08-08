@@ -71,7 +71,7 @@ get_header();
                             <p><strong>Date:</strong> <?php echo esc_html($display_date); ?></p>
                             <p><strong>Location:</strong> <?php echo esc_html($event_location ? $event_location : 'Location not set'); ?></p>
                             <p><?php the_excerpt(); ?></p>
-                            <a href="<?php echo esc_url($registration_url ? $registration_url : '#'); ?>" class="btn btn-secondary">Register Now</a>
+                            <a href="<?php echo esc_url($registration_url ? $registration_url : '#'); ?>" class="btn btn-secondary" target="_blank">Register Now</a>
                         </div>
                     </div>
                 <?php
