@@ -96,7 +96,8 @@ body {
     height: 100%;
     background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
     opacity: 0.1;
-    pointer-events: none; /* 👈 Add this line */
+    pointer-events: none;
+    /* 👈 Add this line */
 }
 
 .hero h1 {
@@ -254,12 +255,16 @@ footer p {
     .hero h1 {
         font-size: 2.5rem;
     }
+
     .hero p {
         font-size: 1.2rem;
     }
-    .intro h2, .events h2 {
+
+    .intro h2,
+    .events h2 {
         font-size: 2rem;
     }
+
     .events-grid {
         grid-template-columns: 1fr;
     }
@@ -273,7 +278,7 @@ footer p {
         top: 70px;
         right: 20px;
         padding: 1rem;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         z-index: 1000;
     }
 
@@ -284,15 +289,25 @@ footer p {
     .menu-toggle {
         display: block;
     }
+
+    .container {
+        padding: 0 20px !important;
+    }
+
+    .search-bar {
+        margin-top: 2rem !important;
+    }
 }
 
 @media (max-width: 480px) {
     .hero {
         padding: 3rem 1rem;
     }
+
     .hero h1 {
         font-size: 2rem;
     }
+
     .btn {
         padding: 0.6rem 1.5rem;
     }
