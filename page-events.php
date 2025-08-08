@@ -26,7 +26,7 @@ get_header();
     </header>
     <section class="events container">
         <form class="search-bar" method="get" action="<?php echo esc_url(get_permalink()); ?>">
-            <input type="text" name="event_search" placeholder="Search by location or date (e.g., Nairobi, September 2025)" value="<?php echo esc_attr(isset($_GET['event_search']) ? $_GET['event_search'] : ''); ?>">
+            <input type="text" name="event_search" placeholder="Search by name (e.g., Nairobi)" value="<?php echo esc_attr(isset($_GET['event_search']) ? $_GET['event_search'] : ''); ?>">
             <button type="submit" class="btn btn-secondary">Search</button>
         </form>
         <div class="events-grid">
