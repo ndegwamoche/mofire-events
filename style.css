@@ -1,0 +1,298 @@
+/*!
+Theme Name: Mofire Events
+Theme URI: https://github.com/ndegwamoche/mofire-events
+Author: Martin Ndegwa Moche
+Author URI: https://github.com/ndegwamoche/
+Description: This project is a basic CMS-driven website built for Mofire Events, a trending events company in Kenya, as part of a developer interview assessment by KCB Bank Kenya. The website features a dynamic homepage with company information and the latest upcoming events, as well as an events listing page powered by a custom post type (WordPress) or collection (Statamic). It demonstrates content modeling, templating, and CMS deployment skills.
+Version: 1.0.0
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo a {
+    color: #ff2d55 !important;
+    text-decoration: none !important;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #ff2d55;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ff2d55;
+}
+
+.hero {
+    background: linear-gradient(135deg, #ff8c00, #ff2d55);
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    opacity: 0.1;
+    pointer-events: none; /* 👈 Add this line */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #fff;
+    color: #ff2d55;
+}
+
+.btn-primary:hover {
+    background: #ffebf0;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: #ff2d55;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #e0244a;
+    transform: scale(1.05);
+}
+
+.intro {
+    padding: 3rem 0;
+    text-align: center;
+    background: white;
+    margin: 2rem auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.intro h2 {
+    color: #ff2d55;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    color: #555;
+}
+
+.events {
+    padding: 3rem 0;
+}
+
+.events h2 {
+    color: #ff2d55;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-card .event-content {
+    padding: 1.5rem;
+}
+
+.event-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.event-card p {
+    color: #555;
+    margin-bottom: 0.8rem;
+}
+
+.search-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.search-bar input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-bar .btn {
+    padding: 0.8rem 1.5rem;
+}
+
+
+.no-events {
+    text-align: center;
+    color: #555;
+    font-size: 1.2rem;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+    .intro h2, .events h2 {
+        font-size: 2rem;
+    }
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #fff;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 1rem;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 0.6rem 1.5rem;
+    }
+}
